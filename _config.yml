@@ -1,0 +1,4 @@
+deploy:
+  type: git
+  repository: https://github.com/NBUT-NJY/NBUT-NJY.github.io  #你的仓库地址
+  branch: master
