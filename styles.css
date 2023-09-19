@@ -1,0 +1,104 @@
+body {
+    background-color: bisque;
+}
+
+.headline {
+    text-indent: 300px;
+    font-style: italic;
+    color: darkgrey;
+}
+
+h2 {
+    /* text-indent: 100px; */
+    margin-left: 100px;
+    margin-right: 1000px;
+    clear: both;
+    background-color: aliceblue;
+    box-shadow: 0 0 10px 10px aliceblue;
+    border-top-right-radius: 200px;
+    border-bottom-right-radius: 200px;
+}
+
+.Main_body {
+    /* text-indent: 140px; */
+    font-size: 18px;
+    height: 200px;
+    width: 130px;
+    margin-left: 140px;
+    margin-top: 0px;
+    float: left;
+    clear: both;
+    background-color: rgba(153, 238, 164, 0.555);
+    padding: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 15px;
+    line-height: 1.5;
+}
+
+/*图片相关参数*/
+.picture {
+    text-indent: 20px;
+    width: 1900px;
+    margin: 0 auto;
+}
+
+a {
+    font-style: italic;
+}
+
+/* 纵向图片放大参数 */
+.imgbig_t{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 15px;
+    width: 100%;
+    height: 100%;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* height: 100vh; */
+    /* overflow: hidden; */
+    width: 225px; /* 图片容器的初始宽度 */
+    height: 300px; /* 图片容器的初始高度 */
+    transition: width 0.8s, height 0.8s; /* 平滑过渡动画 */
+}
+
+.imgbig_t:hover{
+    width: 450px; /* 鼠标悬停时的宽度 */
+    height: 600px; /* 鼠标悬停时的高度 */
+}
+/* 横向图片放大参数 */
+.imgbig {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 15px;
+    width: 100%;
+    height: 100%;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* height: 100vh; */
+    /* overflow: hidden; */
+    width: 300px; /* 图片容器的初始宽度 */
+    height: 225px; /* 图片容器的初始高度 */
+    transition: width 0.8s, height 0.8s; /* 平滑过渡动画 */
+}
+
+.imgbig:hover{
+    width: 600px; /* 鼠标悬停时的宽度 */
+    height: 450px; /* 鼠标悬停时的高度 */
+}
+
+#footer{
+    background-color: rgb(232, 255, 129);
+    color:rgb(0, 0, 0);
+    clear: both;
+    text-align: center;
+    padding: 20px;
+    font-size: 40px;
+    box-shadow: 0 0 20px 20px rgba(232, 255, 129, 1);
+}
