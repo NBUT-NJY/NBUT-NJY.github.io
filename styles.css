@@ -13,6 +13,7 @@ h2 {
     margin-left: 100px;
     margin-right: 1000px;
     clear: both;
+    width: 1000px;
     background-color: aliceblue;
     box-shadow: 0 0 10px 10px aliceblue;
     border-top-right-radius: 200px;
