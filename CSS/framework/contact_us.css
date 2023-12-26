@@ -1,0 +1,142 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#bg {
+    height: 300px;
+    width: 100%;
+    background: url("../../imgs/bg.png") no-repeat center #53accc;
+}
+
+#main {
+    height: 900px;
+    width: 100%;
+    min-width: 1800px;
+}
+
+/* 用户支持 */
+#main #User_support {
+    height: 200px;
+    margin: 100px 300px 50px 300px;
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+
+#main #User_support #User_text {
+    /* margin: 20px auto auto 20px; */
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+#main #User_support #User_text h3 {
+    line-height: 40px;
+    margin: 0;
+}
+
+#main #User_support #User_text div {
+    color: rgb(100, 100, 100);
+    margin: 0 0 30px 0;
+}
+
+#main #User_support #User_text a {
+    line-height: 30px;
+    color: rgb(50, 172, 50);
+}
+
+/* KOL及媒体 */
+
+#main #kol {
+    height: 100px;
+    margin: 50px 300px 50px 300px;
+    /* background: #e0e0e0; */
+    border-radius: 10px;
+}
+
+#main #kol #kol_text h3 {
+    line-height: 40px;
+    margin: 0;
+}
+
+#main #kol #kol_text div {
+    color: rgb(100, 100, 100);
+    margin: 0 0 20px 0;
+}
+
+#main #kol #kol_text a {
+    line-height: 30px;
+    color: rgb(50, 172, 50);
+}
+
+/* 销售 */
+#main #sale {
+    height: 100px;
+    margin: 0px 300px 50px 300px;
+    /* background: #e0e0e0; */
+    border-radius: 10px;
+}
+
+#main #sale #sale_text h3 {
+    line-height: 40px;
+    margin: 0 0 20px 0;
+}
+
+#main #sale #sale_text div {
+    color: rgb(100, 100, 100);
+    margin: 0px 0 10px 0;
+}
+
+#main #sale #sale_text a {
+    line-height: 10px;
+    color: rgb(50, 172, 50);
+}
+
+/* 人才 */
+#main #talent {
+    height: 100px;
+    margin: 0px 300px 50px 300px;
+    /* background: #e0e0e0; */
+    border-radius: 10px;
+}
+
+#main #talent #talent_text h3 {
+    line-height: 40px;
+    margin: 0 0 0px 0;
+}
+
+#main #talent #talent_text div {
+    color: rgb(100, 100, 100);
+    margin: 0px 0 20px 0;
+}
+
+#main #talent #talent_text #koko {
+    color: rgb(100, 100, 100);
+}
+
+#main #talent #talent_text a {
+    line-height: 10px;
+    color: rgb(50, 172, 50);
+}
+
+/* 其他 */
+#main #more {
+    height: 100px;
+    margin: 0px 300px 50px 300px;
+    /* background: #e0e0e0; */
+    border-radius: 10px;
+}
+
+#main #more #more_text h3 {
+    line-height: 40px;
+    margin: 0 0 0px 0;
+}
+
+#main #more #more_text div {
+    color: rgb(100, 100, 100);
+    margin: 0px 0 20px 0;
+}
+
+#main #more #more_text a {
+    line-height: 10px;
+    color: rgb(50, 172, 50);
+}
