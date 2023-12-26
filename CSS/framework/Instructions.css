@@ -2,3 +2,133 @@ body {
     padding: 0;
     margin: 0;
 }
+
+#wiring {
+    width: 100%;
+    min-width: 1800px;
+    height: 900px;
+}
+
+#wiring #panel {
+    width: 400px;
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 600px;
+}
+
+#wiring #mcu {
+    width: 400px;
+    /* margin-right: 100px;
+    padding-right: 100px; */
+}
+
+#wiring #VCC {
+    width: 1800px;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#wiring #L {
+    width: 1800px;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#wiring #S {
+    width: 1800px;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#wiring #GND {
+    width: 1800px;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#wiring #text {
+    height: 300px;
+    width: 90%;
+    min-width: 1600px;
+    margin: 50px 100px 0 100px;
+    display: flex;
+    user-select: none;
+}
+
+#wiring #text #VCC_text {
+    flex: 1;
+    background: red;
+    margin: 0 20px 0 20px;
+    /* opacity: 0.5; */
+    border-radius: 20px;
+    color: white;
+    transition:opacity 0.3s ease-in
+}
+
+#wiring #text #VCC_text:hover {
+    cursor: pointer;
+}
+
+#wiring #text #L_text {
+    flex: 1;
+    background: green;
+    margin: 0 20px 0 20px;
+    /* opacity: 0.5; */
+    border-radius: 20px;
+    color: white;
+    transition:opacity 0.3s ease-in
+}
+
+#wiring #text #L_text:hover {
+    cursor: pointer;
+}
+
+#wiring #text #S_text {
+    flex: 1;
+    background: orange;
+    margin: 0 20px 0 20px;
+    /* opacity: 0.5; */
+    border-radius: 20px;
+    color: white;
+    transition:opacity 0.3s ease-in
+}
+
+#wiring #text #S_text:hover {
+    cursor: pointer;
+}
+
+#wiring #text #GND_text {
+    flex: 1;
+    background: #616161;
+    margin: 0 20px 0 20px;
+    /* opacity: 0.5; */
+    border-radius: 20px;
+    color: white;
+    transition:opacity 0.3s ease-in
+}
+
+#wiring #text #GND_text:hover {
+    cursor: pointer;
+}
+
+#text h4 {
+    margin-left: 20px;
+    font-size: 1.5em;
+}
+
+#text .text {
+    margin: 20px;
+    font-size: 1.2em;
+}
+
+#wiring #VCC,#L,#S,#GND {
+    transition:opacity 0.3s ease-in
+}

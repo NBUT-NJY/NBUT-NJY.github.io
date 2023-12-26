@@ -4,6 +4,7 @@
     background: #000;
     width: 100%;
     min-width: 1800px;
+    z-index: 999;
 }
 
 /*logo 图片的样式*/
@@ -11,6 +12,7 @@
     width: 80px;
     margin-left: 20px;
     margin-top: 5px;
+    z-index: 999;
 }
 
 /* 对logo文字赋予样式 */
@@ -31,7 +33,8 @@
     /* padding-top: 30px; */
     /* margin-top: 0px; */
     text-decoration: none;
-    font-family: Swis721 BlkEx BT
+    font-family: Swis721 BlkEx BT;
+    z-index: 999;
 }
 
 /* 设置logo点击后的变化 没有变化 */
@@ -46,6 +49,7 @@
     position: relative;
     float: right;
     margin-right: 34px;
+    z-index: 999;
 }
 
 .headerNav a {
@@ -61,12 +65,14 @@
     /* padding: 20px 24px 24px 20px; */
     margin-top: 20px;
     text-decoration: none;
+    z-index: 999;
 }
 
 .headerNav a:hover {
     color: black;
     background: #ffffff;
     border-radius: 6px;
+    z-index: 999;
 }
 
 /* 尾页的样式 */
@@ -75,6 +81,7 @@
     min-width: 1800px;
     height: 80px;
     background: #272727;
+    
 }
 
 #footer div {
