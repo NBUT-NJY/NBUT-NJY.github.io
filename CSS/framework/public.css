@@ -68,4 +68,26 @@
     background: #ffffff;
     border-radius: 6px;
 }
-/* 对跳转页眉赋予样式 */
+
+/* 尾页的样式 */
+#footer {
+    width: 100%;
+    min-width: 1800px;
+    height: 80px;
+    background: #414141;
+}
+
+#footer div {
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-top: 30px;
+    color: white;
+}
+
+#footer div hr {
+    margin-top: 0px;
+}
+
+#footer #njy {
+    float: right;
+}

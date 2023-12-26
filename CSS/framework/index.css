@@ -4,11 +4,11 @@ body {
 }
 
 /* 隔离栏，仅设计时调用 ！！！！成品请直接注释 */
-#geli {
+/* #geli {
     width: 100%;
     height: 100px;
     background: #ffffff;
-}
+} */
 
 
 /* 隔离栏，仅设计时调用 ！！！！成品请直接注释 */
@@ -375,3 +375,4 @@ body {
 #Page_6 .par_name {
     color: red;
 }
+
