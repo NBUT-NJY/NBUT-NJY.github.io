@@ -1,0 +1,377 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/* 隔离栏，仅设计时调用 ！！！！成品请直接注释 */
+#geli {
+    width: 100%;
+    height: 100px;
+    background: #ffffff;
+}
+
+
+/* 隔离栏，仅设计时调用 ！！！！成品请直接注释 */
+/* 对第一个页面赋予样式 */
+#Page_1 {
+    width: 100%;
+    min-width: 1800px;
+    height: 950px;
+    background: #585858;
+
+}
+
+#Page_1 h2 {
+    color: white;
+    background: #585858;
+    margin-top: 0;
+    font-size: 6em;
+    padding-top: 300px;
+    margin-left: 100px;
+    float: left;
+}
+
+#Page_1 #dargon {
+    position: relative;
+    top:-200px;
+    width: 500px;
+    filter: blur(0px); /*模糊度*/
+    border-radius: 50px 50px 50px 50px;
+    box-shadow: 0 0 20px 20px #54545a; 
+    margin-top: 20px;
+    margin-left: 100px;
+    padding-top: 0px;
+}
+
+#Page_1 #ui_1 {
+    width: 130px;
+    margin-left: 140px;
+    margin-top: 80px;
+}
+
+#chart-container {
+    position: relative;
+    float: right;
+    margin-right: 50px;
+    height: 600px;
+    width: 600px;
+    overflow: hidden;
+    font-size: 100px;
+    margin-top: 150px;
+  }
+
+/* 对第二个页面赋予样式 */
+#Page_2 {
+    width: 100%;
+    min-width: 1800px;
+    height: 950px;
+    background: black;
+    color: white;
+}
+
+#Page_2 h2 {
+    color: white;
+    margin-top: 0px;
+    padding-top: 30px;
+    margin-left: 50px;
+    font-size: 5em;
+    letter-spacing: 20px;
+}
+
+#Page_2 #Button {
+    font-size: 3em;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 170px;
+    margin-left: 180px;
+    color: #606060;
+    user-select: none;
+}
+
+#Page_2 #Button span {
+    transition: color 0.8s;
+}
+
+#Page_2 #Button span:hover {
+    cursor: pointer;
+}
+
+#Page_2 #Button #Button_1 {
+    color: #ffffff;
+}
+
+/* #Page_2 #Button_1 .Detail {
+    line-height: 2em;
+    font-size: 20px;
+} */
+
+#Page_2 img {
+    width: 1280px;
+    height: 693px;
+    position: absolute;
+    top: 0px;
+    transition: top 1s ease-in-out,opacity 1.2s ease-in-out;
+
+}
+
+#Page_2 #image1 {
+    top: 0px;
+    opacity: 1.0;
+}
+
+#Page_2 #image2 {
+    top: 693px;
+    opacity: 0.0;
+}
+
+#Page_2 #image3 {
+    top: 1386px;
+}
+
+#Page_2 #image4 {
+    top: 2079px;
+}
+
+#Page_2 .slider {
+    width: 1200px;
+    height: 693px;
+    position: absolute;
+    top:1200px;
+    left: 600px;
+    overflow: hidden;
+}
+
+/* 对第三页赋予样式 */
+#Page_3 {
+    width: 100%;
+    min-width: 1800px;
+    height: 950px;
+    background: white;
+}
+
+#Page_3 #chart-container_1 {
+    position: relative;
+    left: 1150px;
+    height: 300px;
+    width: 650px;
+    overflow: hidden;
+}
+
+#Page_3 #chart-container_2 {
+    position: relative;
+    left: 1300px;
+    height: 400px;
+    width: 400px;
+    overflow: hidden;
+}
+
+#Page_3 #Com_Button {
+    /* float: right; */
+    position: absolute;
+    top: 2200px;
+    font-size: 2.5em;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 100px;
+    margin-left: 850px;
+    color: #aaaaaa;
+    user-select: none;
+
+}
+
+#Page_3 #Com_Button span {
+    transition: color 0.8s;
+}
+
+#Page_3 #Com_Button span:hover {
+    cursor: pointer;
+}
+
+#Page_3 #Com_Button #Com_Button_1 {
+    color: #000000;
+}
+
+#Page_3 h2 {
+    color: black;
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-left: 1200px;
+    font-size: 5em;
+    letter-spacing: 20px;
+}
+
+#Page_3 .slider_1 {
+    width: 730px;
+    height: 975px;
+    position: absolute;
+    top:2000px;
+    left: 0px;
+    overflow: hidden;
+}
+
+#Page_3 img {
+    width: 730px;
+    height: 975px;
+    position: absolute;
+    top: 0px;
+    transition:opacity 0.3s ease-in;
+}
+
+#Page_3 #Com_image1 {
+    opacity: 1.0;
+    z-index: 999;
+}
+
+#Page_3 #Com_image2 {
+    opacity: 0.0;
+    z-index: 998;
+}
+
+#Page_3 #Com_image3 {
+    opacity: 0.0;
+    z-index: 998;
+}
+
+#Page_3 #Com_image4 {
+    opacity: 0.0;
+    z-index: 998;
+}
+
+#Page_3 #Com_image5 {
+    opacity: 0.0;
+    z-index: 998;
+}
+
+/* 对第四页赋予样式 */
+
+#Page_4 {
+    width: 100%;
+    min-width: 1800px;
+    height: 1000px;
+    background: black;
+}
+
+#Page_4 h2 {
+    color: white;
+    padding-top: 40px;
+    /* font-family: ; */
+    font-size: 5em;
+    margin-top: 0px;
+    margin-left: 400px;
+}
+
+#Page_4 #fixed_image1 {
+    position: relative;
+    top: -180px;
+    width: 1300px;
+    margin-left: 250px;
+}
+
+/* 对第五页赋予样式 */
+#Page_5 {
+    width: 100%;
+    min-width: 1800px;
+    height: 1000px;
+    background: #ffffff;
+}
+
+#Page_5 h2 {
+    margin-top: 0px;
+    padding-top: 40px;
+    font-size: 5em;
+    margin-left: 300px;
+}
+
+#Page_5 .Page_5_slider {
+    /* display: flex; */
+    margin-top: -100px;
+    min-width: 1800px;
+    height: 700px;
+}
+
+/* 这是一个用来占位的图片没有任何视觉上的dio用 */
+#Page_5 #tool {
+    height: 600px;
+}
+
+#Page_5 #marlin_logo {
+    position: relative;
+    top:60px;
+    width: 400px;
+    padding-right: 50px;
+    margin-left: 250px;
+    transition: width 0.5s,padding-right 0.5s,margin-left 0.5s;
+}
+
+#Page_5 #marlin_logo:hover {
+    width: 500px;
+    padding-right: 0px;
+    margin-left: 200px;
+}
+
+#Page_5 #klipper_logo {
+    width: 300px;
+    padding-right: 100px;
+    padding-left: 50px;
+    transition: width 0.5s,padding-right 0.5s,margin-left 0.5s,padding-left 0.5s;
+}
+
+#Page_5 #klipper_logo:hover {
+    width: 400px;
+    padding-right: 50px;
+    padding-left: 0px;
+}
+
+#Page_5 #reprap_logo {
+    width: 400px;
+    padding-right: 100px;
+    padding-left: 50px;
+    transition: width 0.5s,padding-right 0.5s,margin-left 0.5s,padding-left 0.5s;
+}
+
+#Page_5 #reprap_logo:hover {
+    width: 500px;
+    padding-left: 0px;
+}
+
+/* 对第六页赋予样式 */
+
+#Page_6 {
+    width: 100%;
+    min-width: 1800px;
+    height: 1000px;
+    background: #000;
+}
+
+#Page_6 h2 {
+    color: rgb(255, 255, 255);
+    margin-top: 0px;
+    padding-top: 60px;
+    margin-left: 100px;
+    font-size: 5em;
+    letter-spacing: 20px;
+}
+
+#Page_6 #par_table {
+    color: white;
+    font-size: 2.5em;
+    /* line-height: 2em; */
+    margin-left: 150px;
+    margin-top: 150px;
+    margin-right: 150px;
+    border-collapse: collapse;
+}
+
+#Page_6 tr {
+    border: 1px solid white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+#Page_6 .par_name,.par_valu {
+    width: 600px;
+    height: 100px;
+}
+
+#Page_6 .par_name {
+    color: red;
+}

@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="CH-zn">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./CSS/framework/index.css">
+    <link rel="stylesheet" href="./CSS/framework/public.css">
+    <script src="./js/dist/echarts.js"></script>
+    <script src="./js/controllers/index.js"></script>
+    <script src="./js/controllers/dark.js"></script>
+    <script src="./js/controllers/white.js"></script>
+    <title>CREATOR</title>
+</head>
+
+<body>
+    <!-- 页眉 -->
+    <header id="header">
+        <!-- logo图片 -->
+        <a href="index.html"><img id="logo" src="./imgs/logo v2.png"></a>
+        <!--logo文字  -->
+        <a id="logo_txt" href="index.html"><span>CREATOR</span></a>
+
+        <nav class="headerNav">
+            <a href="./index.html">
+                <span class="header_text">产品</span>
+            </a>
+            <a href="./html/">
+                <span class="header_text">使用方法</span>
+            </a>
+            <a href="./html/">
+                <span class="header_text">联系我们</span>
+            </a>
+        </nav>
+    </header>
+
+    <!-- 问题页 -->
+    <div id="Page_1">
+        <h2>3D打印的痛</h2>
+        <!-- <img id="dargon" src="./imgs/dargon.png"> -->
+        <img id="ui_1" src="./imgs/UI_1.png">
+        <div id="chart-container"></div>
+        <script>
+            var dom = document.getElementById('chart-container');
+            var myChart = echarts.init(dom, 'dark', {
+                renderer: 'canvas',
+                useDirtyRect: false
+            });
+            var app = {};
+
+            var option;
+
+            option = {
+                title: {
+                    // text: 'Nightingale Chart',
+                    // subtext: 'Fake Data',
+                    // left: 'center'
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{a} <br/>{b} :{d}%'
+                },
+                legend: {
+                    // left: 'center',
+                    top: 'bottom',
+                    data: [
+                        'rose1',
+                        'rose2',
+                        'rose3',
+                        'rose4',
+                        'rose5',
+                        'rose6',
+                        'rose7',
+                        'rose8'
+                    ]
+                },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        mark: { show: true },
+                        dataView: { show: true, readOnly: false },
+                        restore: { show: true },
+                        saveAsImage: { show: true }
+                    }
+                },
+                series: [
+                    {
+                        name: '发生的概率',
+                        type: 'pie',
+                        radius: [50, 250],
+                        center: ['50%', '50%'],
+                        roseType: 'area',
+                        itemStyle: {
+                            borderRadius: 10
+                        },
+                        label: {
+                            show: false
+                        },
+                        emphasis: {
+                            label: {
+                                show: false
+                            }
+                        },
+                        data: [
+                            { value: 30, name: '喷头堵塞' },
+                            { value: 25, name: '耗材断裂' },
+                            { value: 35, name: '耗材缠绕' },
+                            { value: 10, name: '挤出机故障' },
+                            { value: 20, name: '耗材耗尽' },
+                            // { value: 15, name: 'rose 6' },
+                            // { value: 12, name: 'rose 7' },
+                            // { value: 10, name: 'rose 8' }
+                        ]
+                    }
+                    // {
+                    //     name: 'Area Mode',
+                    //     type: 'pie',
+                    //     radius: [20, 140],
+                    //     center: ['75%', '50%'],
+                    //     roseType: 'area',
+                    //     itemStyle: {
+                    //         borderRadius: 5
+                    //     },
+                    //     data: [
+                    //         { value: 30, name: 'rose 1' },
+                    //         { value: 28, name: 'rose 2' },
+                    //         { value: 26, name: 'rose 3' },
+                    //         { value: 24, name: 'rose 4' },
+                    //         { value: 22, name: 'rose 5' },
+                    //         { value: 20, name: 'rose 6' },
+                    //         { value: 18, name: 'rose 7' },
+                    //         { value: 16, name: 'rose 8' }
+                    //     ]
+                    // }
+                ]
+            };
+
+            if (option && typeof option === 'object') {
+                myChart.setOption(option);
+            }
+
+            window.addEventListener('resize', myChart.resize);
+        </script>
+    </div>
+
+    <!-- 介绍页 -->
+    <div id="Page_2">
+        <h2>有趣的设计</h2>
+        <div id="Button">
+            <div id="Button_1">
+                <span>光电感应</span><br>
+                <!-- 留存bug,加入详细页样式无效 -->
+                <!-- <div class="Detail">精准无误</div> -->
+            </div>
+            <div id="Button_2">
+                <span>微动传感</span><br>
+                <!-- <div class="Detail">快人一步</div> -->
+            </div>
+            <div id="Button_3">
+                <span>状态指示灯</span><br>
+                <!-- <div class="Detail">人机交互</div> -->
+            </div>
+            <div id="Button_4">
+                <span>双向进料</span><br>
+                <!-- <div class="Detail">进料便捷</div> -->
+            </div>
+        </div>
+        <div class="container">
+            <div class="slider">
+                <img id="image1" src="./imgs/Photoelectric.png" alt="光电感应">
+                <img id="image2" src="./imgs/Micro_Switch.png" alt="微动传感">
+                <img id="image3" src="./imgs/Indicator_light.png" alt="状态指示灯">
+                <img id="image4" src="./imgs/two_way_feed.png" alt="双向进料">
+            </div>
+        </div>
+        <script>
+            // 这里是JavaScript代码，用来实现网页的交互和动态效果
+            // 获取按钮和滑动容器的元素对象
+            var button1 = document.getElementById("Button_1");
+            var button2 = document.getElementById("Button_2");
+            var button3 = document.getElementById("Button_3");
+            var button4 = document.getElementById("Button_4");
+            var image1 = document.getElementById("image1");
+            var image2 = document.getElementById("image2");
+            var image3 = document.getElementById("image3");
+            var image4 = document.getElementById("image4");
+            //定义自动播放函数变量
+            var Page_2_image_num = 0;
+            var Page_2_cooling_time = 0;
+            var Page_2_cooling_time_t = 0;
+            // 定义按钮触发函数
+            function Page_2_Button_1_click() {
+                // 点击按钮1时，显示图片1，隐藏图片2，3，4，同时调整字体颜色
+                Page_2_image_num = 0;
+                Page_2_cooling_time = 0;
+                image1.style.top = "0px";
+                image1.style.opacity = "1.0"
+                image2.style.top = "693px";
+                image2.style.opacity = "0.0"
+                image3.style.top = "1386px"
+                image3.style.opacity = "0.0"
+                image4.style.top = "2079px"
+                image4.style.opacity = "0.0"
+                button1.style.color = "#ffffff"
+                button2.style.color = "#606060"
+                button3.style.color = "#606060"
+                button4.style.color = "#606060"
+            }
+
+            function Page_2_Button_2_click() {
+                // 点击按钮2时，显示图片2，隐藏图片1，3，4，同时调整字体颜色
+                Page_2_image_num = 1;
+                Page_2_cooling_time = 0;
+                image1.style.top = "-693px";
+                image1.style.opacity = "0.0"
+                image2.style.top = "0px";
+                image2.style.opacity = "1.0"
+                image3.style.top = "693px"
+                image3.style.opacity = "0.0"
+                image4.style.top = "1386px"
+                image4.style.opacity = "0.0"
+                button1.style.color = "#606060"
+                button2.style.color = "#ffffff"
+                button3.style.color = "#606060"
+                button4.style.color = "#606060"
+            }
+
+            function Page_2_Button_3_click() {
+                // 点击按钮3时，显示图片3，隐藏图片1，2，4，同时调整字体颜色
+                Page_2_image_num = 2;
+                Page_2_cooling_time = 0;
+                image1.style.top = "-1386px";
+                image1.style.opacity = "0.0"
+                image2.style.top = "-693px";
+                image2.style.opacity = "0.0"
+                image3.style.top = "0px"
+                image3.style.opacity = "1.0"
+                image4.style.top = "693px"
+                image4.style.opacity = "0.0"
+                button1.style.color = "#606060"
+                button2.style.color = "#606060"
+                button3.style.color = "#ffffff"
+                button4.style.color = "#606060"
+            }
+
+            function Page_2_Button_4_click() {
+                // 点击按钮4时，显示图片4，隐藏图片1，2，3，同时调整字体颜色
+                Page_2_image_num = 3;
+                Page_2_cooling_time = 0;
+                image1.style.top = "-2079px";
+                image1.style.opacity = "0.0"
+                image2.style.top = "-1386px";
+                image2.style.opacity = "0.0"
+                image3.style.top = "-693px"
+                image3.style.opacity = "0.0"
+                image4.style.top = "0px"
+                image4.style.opacity = "1.0"
+                button1.style.color = "#606060"
+                button2.style.color = "#606060"
+                button3.style.color = "#606060"
+                button4.style.color = "#ffffff"
+            }
+
+            //设置按钮触发
+            button1.onclick = Page_2_Button_1_click;
+            button2.onclick = Page_2_Button_2_click;
+            button3.onclick = Page_2_Button_3_click;
+            button4.onclick = Page_2_Button_4_click;
+            //自动播放函数
+            function Page2_auto_play() {
+                if (Page_2_image_num == 3) {
+                    Page_2_image_num = 0;
+                } else {
+                    Page_2_image_num++;
+                }
+                Page_2_cooling_time_t = Page_2_cooling_time;
+                switch (Page_2_image_num) {
+                    case 0:
+                        Page_2_Button_1_click();
+                        break;
+                    case 1:
+                        Page_2_Button_2_click();
+                        break;
+                    case 2:
+                        Page_2_Button_3_click();
+                        break;
+                    case 3:
+                        Page_2_Button_4_click();
+                        break;
+                }
+                Page_2_cooling_time = Page_2_cooling_time_t;
+            }
+            //自动冷却函数
+            function Page2_auto_cooling_time () {
+                if (Page_2_cooling_time < 2) {
+                    Page_2_cooling_time++;
+                }else {
+                    Page2_auto_play();
+                }
+            }
+            setInterval(Page2_auto_cooling_time,3000);
+            // button1.addEventListener("click", function () {
+            //     // 点击按钮1时，显示图片1，隐藏图片2，3，4，同时调整字体颜色
+            //     image1.style.top = "0px";
+            //     image1.style.opacity = "1.0"
+            //     image2.style.top = "693px";
+            //     image2.style.opacity = "0.0"
+            //     image3.style.top = "1386px"
+            //     image3.style.opacity = "0.0"
+            //     image4.style.top = "2079px"
+            //     image4.style.opacity = "0.0"
+            //     button1.style.color = "#ffffff"
+            //     button2.style.color = "#606060"
+            //     button3.style.color = "#606060"
+            //     button4.style.color = "#606060"
+
+            // });
+            // button2.addEventListener("click", function () {
+            //     // 点击按钮2时，显示图片2，隐藏图片1，3，4，同时调整字体颜色
+            //     image1.style.top = "-693px";
+            //     image1.style.opacity = "0.0"
+            //     image2.style.top = "0px";
+            //     image2.style.opacity = "1.0"
+            //     image3.style.top = "693px"
+            //     image3.style.opacity = "0.0"
+            //     image4.style.top = "1386px"
+            //     image4.style.opacity = "0.0"
+            //     button1.style.color = "#606060"
+            //     button2.style.color = "#ffffff"
+            //     button3.style.color = "#606060"
+            //     button4.style.color = "#606060"
+            // });
+            // button3.addEventListener("click", function () {
+            //     // 点击按钮3时，显示图片3，隐藏图片1，2，4，同时调整字体颜色
+            //     image1.style.top = "-1386px";
+            //     image1.style.opacity = "0.0"
+            //     image2.style.top = "-693px";
+            //     image2.style.opacity = "0.0"
+            //     image3.style.top = "0px"
+            //     image3.style.opacity = "1.0"
+            //     image4.style.top = "693px"
+            //     image4.style.opacity = "0.0"
+            //     button1.style.color = "#606060"
+            //     button2.style.color = "#606060"
+            //     button3.style.color = "#ffffff"
+            //     button4.style.color = "#606060"
+            // })
+            // button4.addEventListener("click", function () {
+            //     // 点击按钮4时，显示图片4，隐藏图片1，2，3，同时调整字体颜色
+            //     image1.style.top = "-2079px";
+            //     image1.style.opacity = "0.0"
+            //     image2.style.top = "-1386px";
+            //     image2.style.opacity = "0.0"
+            //     image3.style.top = "-693px"
+            //     image3.style.opacity = "0.0"
+            //     image4.style.top = "0px"
+            //     image4.style.opacity = "1.0"
+            //     button1.style.color = "#606060"
+            //     button2.style.color = "#606060"
+            //     button3.style.color = "#606060"
+            //     button4.style.color = "#ffffff"
+            // })
+        </script>
+    </div>
+
+    <!-- 材料组成页 -->
+    <div id="Page_3">
+        <div id="chart-container_1">
+        </div>
+        <div id="chart-container_2">
+        </div>
+        <div id="Com_Button">
+            <div id="Com_Button_1"><span>打印件</span></div>
+            <div id="Com_Button_2"><span>螺丝</span></div>
+            <div id="Com_Button_3"><span>铜螺母</span></div>
+            <div id="Com_Button_4"><span>轴承</span></div>
+            <div id="Com_Button_5"><span>电子元件</span></div>
+        </div>
+        <div class="container_1">
+            <div class="slider_1">
+                <img id="Com_image1" src="./imgs/3D打印件.png" alt="3D打印件">
+                <img id="Com_image2" src="./imgs/螺丝.png" alt="螺丝">
+                <img id="Com_image3" src="./imgs/铜螺母.png" alt="铜螺母">
+                <img id="Com_image4" src="./imgs/轴承.png" alt="轴承">
+                <img id="Com_image5" src="./imgs/电子元件.png" alt="电子元件">
+            </div>
+        </div>
+        <h2>可直接手搓</h2>
+        <!-- 表一 -->
+        <script>
+            var dom = document.getElementById('chart-container_1');
+            var myChart = echarts.init(dom, 'white', {
+                renderer: 'canvas',
+                useDirtyRect: false
+            });
+            var app = {};
+
+            var option;
+
+            option = {
+                xAxis: {
+                    type: 'value'
+                },
+                yAxis: {
+                    type: 'category',
+                    data: ['DIY价格', '竞品价格']
+                },
+                series: [
+                    {
+                        data: [
+                            {
+                                value: 20.6,
+                                itemStyle: {
+                                    color: '#a90000'
+                                }
+                            },
+                            {
+                                value: 80,
+                                itemStyle: {
+                                    color: '#5470c6'
+                                }
+                            },
+                        ],
+                        type: 'bar'
+                    }
+                ]
+            };
+
+            if (option && typeof option === 'object') {
+                myChart.setOption(option);
+            }
+
+            window.addEventListener('resize', myChart.resize);
+        </script>
+        <!-- 表二 -->
+        <script>
+            var dom = document.getElementById('chart-container_2');
+            var myChart = echarts.init(dom, 'white', {
+                renderer: 'canvas',
+                useDirtyRect: false
+            });
+            var app = {};
+
+            var option;
+
+            option = {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{b} :{d}元'
+                },
+                legend: {
+                    top: '5%',
+                    left: 'center'
+                },
+                series: [
+                    {
+                        name: 'Access From',
+                        type: 'pie',
+                        radius: ['30%', '70%'],
+                        avoidLabelOverlap: false,
+                        itemStyle: {
+                            borderRadius: 10,
+                            borderColor: '#fff',
+                            borderWidth: 2
+                        },
+                        label: {
+                            show: false,
+                            position: 'center'
+                        },
+                        emphasis: {
+                            label: {
+                                show: true,
+                                fontSize: 40,
+                                fontWeight: 'bold'
+                            }
+                        },
+                        labelLine: {
+                            show: false
+                        },
+                        data: [
+                            { value: 1, name: '3D打印件' },
+                            { value: 2.2, name: '螺丝' },
+                            { value: 3.4, name: '铜螺母' },
+                            { value: 6, name: '轴承' },
+                            { value: 8, name: '电子元件' }
+                        ]
+                    }
+                ]
+            };
+
+            if (option && typeof option === 'object') {
+                myChart.setOption(option);
+            }
+
+            window.addEventListener('resize', myChart.resize);
+        </script>
+        <!-- 图片叠加切换 -->
+        <script>
+            // 这里是JavaScript代码，用来实现网页的交互和动态效果
+            // 获取按钮和滑动容器的元素对象
+            var Com_button1 = document.getElementById("Com_Button_1");
+            var Com_button2 = document.getElementById("Com_Button_2");
+            var Com_button3 = document.getElementById("Com_Button_3");
+            var Com_button4 = document.getElementById("Com_Button_4");
+            var Com_button5 = document.getElementById("Com_Button_5");
+            var Com_image1 = document.getElementById("Com_image1");
+            var Com_image2 = document.getElementById("Com_image2");
+            var Com_image3 = document.getElementById("Com_image3");
+            var Com_image4 = document.getElementById("Com_image4");
+            var Com_image5 = document.getElementById("Com_image5");
+            //定义自动播放函数变量
+            var Page_3_image_num = 0;
+            var Page_3_cooling_time = 0;
+            var Page_3_cooling_time_t = 0;
+            // 定义按钮触发函数
+            function Com_Button_1_click() {
+                // 点击按钮1时，显示图片1，隐藏图片2，3，4，同时调整字体颜色
+                Page_3_image_num = 0;
+                Page_3_cooling_time = 0;
+                Com_image1.style.opacity = "1.0";
+                Com_image2.style.opacity = "0.0";
+                Com_image3.style.opacity = "0.0";
+                Com_image4.style.opacity = "0.0";
+                Com_image5.style.opacity = "0.0";
+                Com_image1.style.zIndex = "999";
+                Com_image2.style.zIndex = "998";
+                Com_image3.style.zIndex = "998";
+                Com_image4.style.zIndex = "998";
+                Com_image5.style.zIndex = "998";
+                Com_button1.style.color = "#000000";
+                Com_button2.style.color = "#aaaaaa";
+                Com_button3.style.color = "#aaaaaa";
+                Com_button4.style.color = "#aaaaaa";
+                Com_button5.style.color = "#aaaaaa";
+            }
+
+            function Com_Button_2_click() {
+                // 点击按钮2时，显示图片2，隐藏图片1，3，4，同时调整字体颜色
+                Page_3_image_num = 1;
+                Page_3_cooling_time = 0;
+                Com_image1.style.opacity = "0.0";
+                Com_image2.style.opacity = "1.0";
+                Com_image3.style.opacity = "0.7";
+                Com_image4.style.opacity = "0.0";
+                Com_image5.style.opacity = "0.0";
+                Com_image1.style.zIndex = "998";
+                Com_image2.style.zIndex = "999";
+                Com_image3.style.zIndex = "998";
+                Com_image4.style.zIndex = "998";
+                Com_image5.style.zIndex = "998";
+                Com_button1.style.color = "#aaaaaa";
+                Com_button2.style.color = "#000000";
+                Com_button3.style.color = "#aaaaaa";
+                Com_button4.style.color = "#aaaaaa";
+                Com_button5.style.color = "#aaaaaa";
+            }
+
+            function Com_Button_3_click() {
+                // 点击按钮3时，显示图片3，隐藏图片1，2，4，同时调整字体颜色
+                Page_3_image_num = 2;
+                Page_3_cooling_time = 0;
+                Com_image1.style.opacity = "0.0";
+                Com_image2.style.opacity = "0.7";
+                Com_image3.style.opacity = "1.0";
+                Com_image4.style.opacity = "0.0";
+                Com_image5.style.opacity = "0.0";
+                Com_image1.style.zIndex = "998";
+                Com_image2.style.zIndex = "998";
+                Com_image3.style.zIndex = "999";
+                Com_image4.style.zIndex = "998";
+                Com_image5.style.zIndex = "998";
+                Com_button1.style.color = "#aaaaaa";
+                Com_button2.style.color = "#aaaaaa";
+                Com_button3.style.color = "#000000";
+                Com_button4.style.color = "#aaaaaa";
+                Com_button5.style.color = "#aaaaaa";
+            }
+
+            function Com_Button_4_click() {
+                // 点击按钮4时，显示图片4，隐藏图片1，2，3，同时调整字体颜色
+                Page_3_image_num = 3;
+                Page_3_cooling_time = 0;
+                Com_image1.style.opacity = "0.0";
+                Com_image2.style.opacity = "0.7";
+                Com_image3.style.opacity = "0.7";
+                Com_image4.style.opacity = "1.0";
+                Com_image5.style.opacity = "0.7";
+                Com_image1.style.zIndex = "998";
+                Com_image2.style.zIndex = "998";
+                Com_image3.style.zIndex = "998";
+                Com_image4.style.zIndex = "999";
+                Com_image5.style.zIndex = "998";
+                Com_button1.style.color = "#aaaaaa";
+                Com_button2.style.color = "#aaaaaa";
+                Com_button3.style.color = "#aaaaaa";
+                Com_button4.style.color = "#000000";
+                Com_button5.style.color = "#aaaaaa";
+            }
+
+            function Com_Button_5_click() {
+                // 点击按钮4时，显示图片4，隐藏图片1，2，3，同时调整字体颜色
+                Page_3_image_num = 4;
+                Page_3_cooling_time = 0;
+                Com_image1.style.opacity = "0.0";
+                Com_image2.style.opacity = "0.7";
+                Com_image3.style.opacity = "0.7";
+                Com_image4.style.opacity = "0.7";
+                Com_image5.style.opacity = "1.0";
+                Com_image1.style.zIndex = "998";
+                Com_image2.style.zIndex = "998";
+                Com_image3.style.zIndex = "998";
+                Com_image4.style.zIndex = "998";
+                Com_image5.style.zIndex = "999";
+                Com_button1.style.color = "#aaaaaa";
+                Com_button2.style.color = "#aaaaaa";
+                Com_button3.style.color = "#aaaaaa";
+                Com_button4.style.color = "#aaaaaa";
+                Com_button5.style.color = "#000000";
+            }
+            //设置按钮触发
+            Com_button1.onclick = Com_Button_1_click;
+            Com_button2.onclick = Com_Button_2_click;
+            Com_button3.onclick = Com_Button_3_click;
+            Com_button4.onclick = Com_Button_4_click;
+            Com_button5.onclick = Com_Button_5_click;
+            //自动播放函数
+            function auto_play() {
+                if (Page_3_image_num == 4) {
+                    Page_3_image_num = 0;
+                } else {
+                    Page_3_image_num++;
+                }
+                Page_3_cooling_time_t = Page_3_cooling_time;
+                switch (Page_3_image_num) {
+                    case 0:
+                        Com_Button_1_click();
+                        break;
+                    case 1:
+                        Com_Button_2_click();
+                        break;
+                    case 2:
+                        Com_Button_3_click();
+                        break;
+                    case 3:
+                        Com_Button_4_click();
+                        break;
+                    case 4:
+                        Com_Button_5_click();
+                        break;
+                }
+                Page_3_cooling_time = Page_3_cooling_time_t;
+            }
+            //自动冷却函数
+            function auto_cooling_time () {
+                if (Page_3_cooling_time < 2) {
+                    Page_3_cooling_time++;
+                }else {
+                    auto_play();
+                }
+            }
+            setInterval(auto_cooling_time,3000);
+
+            // Com_button1.addEventListener("click", function () {
+            //     // 点击按钮1时，显示图片1，隐藏图片2，3，4，同时调整字体颜色
+            //     Com_image1.style.opacity = "1.0"
+            //     Com_image2.style.opacity = "0.0"
+            //     Com_image3.style.opacity = "0.0"
+            //     Com_image4.style.opacity = "0.0"
+            //     Com_image5.style.opacity = "0.0"
+            //     Com_image1.style.zIndex = "999"
+            //     Com_image2.style.zIndex = "998"
+            //     Com_image3.style.zIndex = "998"
+            //     Com_image4.style.zIndex = "998"
+            //     Com_image5.style.zIndex = "998"
+            //     Com_button1.style.color = "#000000"
+            //     Com_button2.style.color = "#aaaaaa"
+            //     Com_button3.style.color = "#aaaaaa"
+            //     Com_button4.style.color = "#aaaaaa"
+            //     Com_button5.style.color = "#aaaaaa"
+
+            // });
+            // Com_button2.addEventListener("click", function () {
+            //     // 点击按钮2时，显示图片2，隐藏图片1，3，4，同时调整字体颜色
+            //     Com_image1.style.opacity = "0.0"
+            //     Com_image2.style.opacity = "1.0"
+            //     Com_image3.style.opacity = "0.7"
+            //     Com_image4.style.opacity = "0.0"
+            //     Com_image5.style.opacity = "0.0"
+            //     Com_image1.style.zIndex = "998"
+            //     Com_image2.style.zIndex = "999"
+            //     Com_image3.style.zIndex = "998"
+            //     Com_image4.style.zIndex = "998"
+            //     Com_image5.style.zIndex = "998"
+            //     Com_button1.style.color = "#aaaaaa"
+            //     Com_button2.style.color = "#000000"
+            //     Com_button3.style.color = "#aaaaaa"
+            //     Com_button4.style.color = "#aaaaaa"
+            //     Com_button5.style.color = "#aaaaaa"
+            // });
+            // Com_button3.addEventListener("click", function () {
+            //     // 点击按钮3时，显示图片3，隐藏图片1，2，4，同时调整字体颜色
+            //     Com_image1.style.opacity = "0.0"
+            //     Com_image2.style.opacity = "0.7"
+            //     Com_image3.style.opacity = "1.0"
+            //     Com_image4.style.opacity = "0.0"
+            //     Com_image5.style.opacity = "0.0"
+            //     Com_image1.style.zIndex = "998"
+            //     Com_image2.style.zIndex = "998"
+            //     Com_image3.style.zIndex = "999"
+            //     Com_image4.style.zIndex = "998"
+            //     Com_image5.style.zIndex = "998"
+            //     Com_button1.style.color = "#aaaaaa"
+            //     Com_button2.style.color = "#aaaaaa"
+            //     Com_button3.style.color = "#000000"
+            //     Com_button4.style.color = "#aaaaaa"
+            //     Com_button5.style.color = "#aaaaaa"
+            // })
+            // Com_button4.addEventListener("click", function () {
+            //     // 点击按钮4时，显示图片4，隐藏图片1，2，3，同时调整字体颜色
+            //     Com_image1.style.opacity = "0.0"
+            //     Com_image2.style.opacity = "0.7"
+            //     Com_image3.style.opacity = "0.7"
+            //     Com_image4.style.opacity = "1.0"
+            //     Com_image5.style.opacity = "0.7"
+            //     Com_image1.style.zIndex = "998"
+            //     Com_image2.style.zIndex = "998"
+            //     Com_image3.style.zIndex = "998"
+            //     Com_image4.style.zIndex = "999"
+            //     Com_image5.style.zIndex = "998"
+            //     Com_button1.style.color = "#aaaaaa"
+            //     Com_button2.style.color = "#aaaaaa"
+            //     Com_button3.style.color = "#aaaaaa"
+            //     Com_button4.style.color = "#000000"
+            //     Com_button5.style.color = "#aaaaaa"
+            // })
+            // Com_button5.addEventListener("click", function () {
+            //     // 点击按钮4时，显示图片4，隐藏图片1，2，3，同时调整字体颜色
+            //     Com_image1.style.opacity = "0.0"
+            //     Com_image2.style.opacity = "0.7"
+            //     Com_image3.style.opacity = "0.7"
+            //     Com_image4.style.opacity = "0.7"
+            //     Com_image5.style.opacity = "1.0"
+            //     Com_image1.style.zIndex = "998"
+            //     Com_image2.style.zIndex = "998"
+            //     Com_image3.style.zIndex = "998"
+            //     Com_image4.style.zIndex = "998"
+            //     Com_image5.style.zIndex = "999"
+            //     Com_button1.style.color = "#aaaaaa"
+            //     Com_button2.style.color = "#aaaaaa"
+            //     Com_button3.style.color = "#aaaaaa"
+            //     Com_button4.style.color = "#aaaaaa"
+            //     Com_button5.style.color = "#000000"
+            // })
+            
+            //
+        </script>
+    </div>
+
+    <!-- 固定方式介绍页 -->
+    <div id="Page_4">
+        <h2>三个螺丝孔位，横竖都能装 </h2>
+        <img id="fixed_image1" src="./imgs/螺丝孔位.png" alt="螺丝孔固定">
+    </div>
+
+    <!-- 支持的固件 -->
+    <div id="Page_5">
+        <h2>支持多种固件</h2>
+        <div class="Page_5_slider">
+            <a><img id="tool" src="./imgs/工具.png"></a>
+            <a href="https://marlinfw.org/"><img id="marlin_logo" src="./imgs/marlin_logo.png" alt="马琳固件的logo"></a>
+            <a href="https://www.klipper3d.org/"><img id="klipper_logo" src="./imgs/klipper-logo.png" alt="klipper固件的logo"></a>
+            <a href="https://reprap.org/wiki/RepRap"><img id="reprap_logo" src="./imgs/reprap-logo.png" alt="reprap固件的logo"></a>
+        </div>
+    </div>
+
+    <!-- 产品参数 -->
+    <div id="Page_6">
+        <h2>产品参数</h2>
+        <table id="par_table">
+            <tr>
+                <td class="par_name">可检测耗材:</td>
+                <td class="par_valu">支持所有1.75mm耗材</td>
+                <td class="par_name">检测的分辨率:</td>
+                <td class="par_valu">2.88mm</td>
+            </tr>
+            <tr>
+                <td class="par_name">额定电压:</td>
+                <td class="par_valu">3.3V-5V</td>
+                <td class="par_name">工作温度:</td>
+                <td class="par_valu">-10 to 50 摄氏度</td>
+            </tr>
+            <tr>
+                <td class="par_name">工作温度:</td>
+                <td class="par_valu">10% to 90%</td>
+                <td class="par_name">体积:</td>
+                <td class="par_valu">53.1x30.3x27.3 mm</td>
+            </tr>
+            <tr>
+                <td class="par_name">固定孔位间距:</td>
+                <td class="par_valu">9x30mm</td>
+                <td class="par_name">重量:</td>
+                <td class="par_valu">36g</td>
+            </tr>
+        </table>
+    </div>
+    <!-- 隔离栏 -->
+    <div id="geli">
+
+    </div>
+</body>
+
+</html>

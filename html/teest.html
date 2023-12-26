@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* 这里是CSS代码，用来设置网页的样式和布局 */
+    .container {
+      width: 300px;
+      height: 200px;
+      overflow-x: hidden; /* 隐藏水平滚动条 */
+      position: relative;
+    }
+    .slider {
+      width: 900px; /* 三张图片的总宽度 */
+      height: 200px;
+      position: absolute;
+      left: 0; /* 初始位置 */
+      transition: left 0.5s; /* 滑动动画 */
+    }
+    .slider img {
+      width: 300px;
+      height: 200px;
+      float: left;
+    }
+    button {
+      width: 100px;
+      height: 50px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 这里是HTML代码，用来定义网页的结构和内容 -->
+  <h1>我的网页</h1>
+  <p>点击不同的按钮，显示不同的图片</p>
+  <button id="button1">按钮1</button>
+  <button id="button2">按钮2</button>
+  <span id="button3">按钮3</span>
+  <div class="container">
+    <div class="slider">
+      <img id="image1" src="../imgs/0a4ade9eaeef23dc799e3ad0e3d5279.png" alt="图片1">
+      <img id="image2" src="../imgs/dargon.png" alt="图片2">
+      <img id="image3" src="../imgs/logo v2.png" alt="图片3">
+    </div>
+  </div>
+  <script>
+    // 这里是JavaScript代码，用来实现网页的交互和动态效果
+    // 获取按钮和滑动容器的元素对象
+    var button1 = document.getElementById("button1");
+    var button2 = document.getElementById("button2");
+    var button3 = document.getElementById("button3");
+    var slider = document.getElementsByClassName("slider")[0];
+    // 定义一个变量，表示当前显示的图片的索引，从0开始
+    var index = 0;
+    // 为按钮添加点击事件的监听器和处理函数
+    button1.addEventListener("click", function() {
+      // 点击按钮1时，显示图片1，隐藏其他图片
+      index = 0;
+      // 根据索引，计算滑动容器的左边距，单位为像素
+      var left = -300 * index;
+      // 设置滑动容器的左边距，实现滑动效果
+      slider.style.left = left + "px";
+    });
+    button2.addEventListener("click", function() {
+      // 点击按钮2时，显示图片2，隐藏其他图片
+      index = 1;
+      // 根据索引，计算滑动容器的左边距，单位为像素
+      var left = -300 * index;
+      // 设置滑动容器的左边距，实现滑动效果
+      slider.style.left = left + "px";
+    });
+    button3.addEventListener("click", function() {
+      // 点击按钮3时，显示图片3，隐藏其他图片
+      index = 2;
+      // 根据索引，计算滑动容器的左边距，单位为像素
+      var left = -300 * index;
+      // 设置滑动容器的左边距，实现滑动效果
+      slider.style.left = left + "px";
+    });
+  </script>
+</body>
+</html>

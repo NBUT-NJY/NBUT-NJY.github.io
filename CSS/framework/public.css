@@ -1,0 +1,71 @@
+/* 页眉的背景和大小 */
+#header {
+    height: 90px;
+    background: #000;
+    width: 100%;
+    min-width: 1800px;
+}
+
+/*logo 图片的样式*/
+#header #logo {
+    width: 80px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+/* 对logo文字赋予样式 */
+#header #logo_txt {
+    position: relative; /* 修改为相对位置 */
+    top: -25px;
+    left: -10px;
+    /* float: left; */
+    /* margin-right: 34px; */
+    /* display: inline; */
+    /* float: left; */
+    /* height:40px; */
+    font-size: 28px;
+    line-height: 80px;
+    color:#ffffff;
+    /* padding-left: 24px; */
+    /* padding-right: 24px; */
+    /* padding-top: 30px; */
+    /* margin-top: 0px; */
+    text-decoration: none;
+    font-family: Swis721 BlkEx BT
+}
+
+/* 设置logo点击后的变化 没有变化 */
+/* #header #logo_txt:hover {
+    color: black;
+    background: #ffffff;
+    border-radius: 6px;
+} */
+
+/* 对跳转页眉赋予样式 */
+.headerNav {
+    position: relative;
+    float: right;
+    margin-right: 34px;
+}
+
+.headerNav a {
+    display: block;
+    float: left;
+    height:40px;
+    font-size: 24px;
+    line-height: 40px;
+    color:#ffffff;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 0px;
+    /* padding: 20px 24px 24px 20px; */
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.headerNav a:hover {
+    color: black;
+    background: #ffffff;
+    border-radius: 6px;
+}
+/* 对跳转页眉赋予样式 */
